@@ -1,0 +1,7 @@
+{
+  "name": "heladeriaSujeto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

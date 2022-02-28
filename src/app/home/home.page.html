@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Heladería
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-card-header>
+    
+      <ion-card-title mode = "ios">Heladería</ion-card-title>
+      <ion-card-subtitle text-center>"Donde el suje"</ion-card-subtitle>
+ 
+      <img src = "https://www.creativefabrica.com/wp-content/uploads/2021/04/08/Ice-cream-shop-logo-template-Graphics-10549596-1-1-580x386.png">
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-title>Diligencia los datos:</ion-card-title>
+      <ion-item>
+        <ion-label position = "floating">Nombre</ion-label>
+        <ion-input [(ngModel)] = "Nombre"></ion-input>
+      </ion-item>
+    
+    
+      
+
+      <ion-list>
+        <ion-radio-group [(ngModel)] = "Bolas">
+          <ion-list-header>
+            <ion-label>¿Cuánto desea?</ion-label>
+          </ion-list-header>
+          <img src = "https://worldhealthdesign.com//wp-content/uploads/2018/03/helados-calorias-1.jpg">
+          
+          <ion-item>
+            <ion-label>Una bola $1400</ion-label>
+            <ion-radio color = "success" value = "Una bola $1400"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dos bolas $2200</ion-label>
+            <ion-radio color = "danger" value = "Dos bolas $2200"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Tres bolas $3000</ion-label>
+            <ion-radio color = "primary" value = "Tres bolas $3000"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    
+      <ion-list>
+     
+        <ion-list-header>
+          <ion-label>Sabores</ion-label>
+          
+        </ion-list-header>
+        <img src = "https://static.abc.es/Media/201307/09/Degustacion-helados--644x362.jpg">
+        <ion-item>
+          <ion-label>¿Qué sabores desea?</ion-label>
+          <ion-select multiple = "true" cancelText = "Cancelar" onText = "Aceptar" [(ngModel)] = "Sabores">
+              <ion-select-option value = "Vainilla">Vainilla</ion-select-option>
+              <ion-select-option value = "Fresa">Fresa</ion-select-option>
+              <ion-select-option value = "Chicle">Chicle</ion-select-option>
+              <ion-select-option value = "Cereza">Cereza</ion-select-option>
+              <ion-select-option value = "Ron con pasas">Ron con pasas</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    
+      
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Acompañantes</ion-label>
+        </ion-list-header>
+      <img src = "https://placeralplato.com/files/2017/12/Salsa-de-caramelo.jpg">
+        <ion-item>
+          <ion-label>¿Con qué desea acompañarlo?</ion-label>
+          <ion-select multiple = "true" cancelText = "Cancelar" onText = "Aceptar" [(ngModel)] = "Acompanante">
+              <ion-select-option value = "Sprinkles"> Sprinkles</ion-select-option>
+              <ion-select-option value = "Salsa de fresa">Salsa de fresa</ion-select-option>
+              <ion-select-option value = "Salsa de chocolate">Salsa de chocolate</ion-select-option>
+              <ion-select-option value = "Salsa de caramelo">Salsa de caramelo</ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+      
+        <ion-button color = "primary" expand = "full" (click) = "getDatos()">Realizar compra</ion-button>
+      
+        <ion-label></ion-label>
+    
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf = "contenidoMensaje">
+    <ion-card-header>
+      <ion-card-title>Apartado de pedido</ion-card-title>
+      <ion-card-subtitle>¡Pedido realizado!</ion-card-subtitle>
+      
+    </ion-card-header>
+
+    <img src = "https://images.aws.nestle.recipes/resized/84ce4d933b61812998144e91ef27b593_hconfeti_1200_600.jpg">
+  
+    <ion-card-content>
+      {{Mensaje}}
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>
